@@ -7,12 +7,14 @@
                 <img src="../../content/images/admin/loginAdmin.png" width="100%">
             </div>
             <div *jhiHasAnyAuthority="'ROLE_USER'">
-                <h1 class="display-4">Welcome, USER Presto Zoom!</h1>
+                <h1 class="display-4">Welcome, CLIENT Presto Zoom!</h1>
                 <img src="../../content/images/partner/ManagedbyQ.png" width="100%">
+
             </div>
             <div *jhiHasAnyAuthority="'ROLE_PARTNER'">
                 <h1 class="display-4">Welcome, PARTNER Presto Zoom!</h1>
                 <img src="../../content/images/partner/partnerlogin.png" width="100%">
+
             </div>
 
 
@@ -20,7 +22,9 @@
 
     </div>
 
-<div class="row">
+    <div *ngSwitchCase="false">
+
+    <div class="row">
     <div class="col-md-3">
         <span class="hipster img-fluid rounded"></span>
     </div>
@@ -59,5 +63,6 @@
             <span jhiTranslate="home.like">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" jhiTranslate="home.github">GitHub</a>!
         </p>
     </div>
+</div>
 </div>
 </div>
