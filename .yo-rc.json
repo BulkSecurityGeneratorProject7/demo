@@ -1,0 +1,40 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "org.demo.prestozoom",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.7.0",
+    "applicationType": "monolith",
+    "baseName": "prestozoom",
+    "packageName": "org.demo.prestozoom",
+    "packageFolder": "org/demo/prestozoom",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "MDU3NmU3NTQ3NjkwNjczNjE4NTE0OTA3YzljN2M5NDg0OTgwZGRiMTI4Yzc3OTQ3OGY3NTg4MzlkYzg3MmJlM2Y3NTRlNTU0N2QyOTE0NDgwZDVjM2YzZGM3ZTFlYjU0MGI5ZGI0NDQ1NmI4MGFjMTBkMTY1OWEyNWFkNTc4NzQ=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [],
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ]
+  }
+}
