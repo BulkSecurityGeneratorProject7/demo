@@ -1,0 +1,34 @@
+{
+    "name": "Invoice",
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "payment",
+            "fieldType": "Payment",
+            "fieldValues": "VISA,MASTERCARD,PAYPAL,CHECK,CASH,GIFTCARD"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "serviceRequest",
+            "otherEntityName": "serviceRequest",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "invoice"
+        }
+    ],
+    "changelogDate": "20181205052257",
+    "entityTableName": "invoice",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "jobOrder"
+}

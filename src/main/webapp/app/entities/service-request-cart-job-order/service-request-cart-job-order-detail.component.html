@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceRequestCart">
+            <h2><span jhiTranslate="prestozoomApp.serviceRequestCart.detail.title">Service Request Cart</span> {{serviceRequestCart.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="prestozoomApp.serviceRequestCart.description">Description</span></dt>
+                <dd>
+                    <span>{{serviceRequestCart.description}}</span>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.serviceRequestCart.date">Date</span></dt>
+                <dd>
+                    <span>{{serviceRequestCart.date}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-request-cart-job-order', serviceRequestCart.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

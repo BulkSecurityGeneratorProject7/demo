@@ -1,19 +1,18 @@
 {
     "home": {
-        "title": "Welcome, Java Hipster!",
-        "subtitle": "This is your homepage",
+        "title": "Welcome to Presto Zoom!",
+        "subtitle": "For presentation",
         "logged": {
             "message": "You are logged in as user \"{{username}}\"."
         },
-        "question": "If you have any question on JHipster:",
+        "question": "If you have any question on Presto Zoom:",
         "link": {
-            "homepage": "JHipster homepage",
-            "stackoverflow": "JHipster on Stack Overflow",
-            "bugtracker": "JHipster bug tracker",
-            "chat": "JHipster public chat room",
-            "follow": "follow @java_hipster on Twitter"
+            "homepage": "Presto Zoom Website",
+            "linkedin": "Presto Zoom on LinkedIn",
+            "facebook": "Presto Zoom Facebook Page",
+            "twitter": "follow @prestozoom on Twitter"
         },
-        "like": "If you like JHipster, don't forget to give us a star on",
+        "like": "If you like Presto Zoom, don't forget to give us a star on",
         "github": "GitHub"
     }
 }

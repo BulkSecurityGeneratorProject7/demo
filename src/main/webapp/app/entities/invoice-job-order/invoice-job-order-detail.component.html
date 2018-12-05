@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoice">
+            <h2><span jhiTranslate="prestozoomApp.invoice.detail.title">Invoice</span> {{invoice.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="prestozoomApp.invoice.amount">Amount</span></dt>
+                <dd>
+                    <span>{{invoice.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.invoice.payment">Payment</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'prestozoomApp.Payment.' + invoice.payment}}">{{invoice.payment}}</span>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.invoice.serviceRequest">Service Request</span></dt>
+                <dd>
+                    <div *ngIf="invoice.serviceRequestId">
+                        <a [routerLink]="['/service-request-job-order', invoice.serviceRequestId, 'view']">{{invoice.serviceRequestId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice-job-order', invoice.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

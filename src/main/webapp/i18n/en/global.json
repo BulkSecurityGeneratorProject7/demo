@@ -7,6 +7,18 @@
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "entities": {
                 "main": "Entities",
+                "clientJobOrder": "Client",
+                "clientLocationJobOrder": "Client Location",
+                "serviceRequestCartJobOrder": "Service Request Cart",
+                "serviceRequestJobOrder": "Service Request",
+                "companyJobOrder": "Company",
+                "locationJobOrder": "Location",
+                "departmentJobOrder": "Department",
+                "taskJobOrder": "Task",
+                "employeeJobOrder": "Employee",
+                "jobJobOrder": "Job",
+                "jobHistoryJobOrder": "Job History",
+                "invoiceJobOrder": "Invoice",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,0 +1,56 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="prestozoomApp.serviceRequestCart.home.title">Service Request Carts</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-service-request-cart-job-order" [routerLink]="['/service-request-cart-job-order/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="prestozoomApp.serviceRequestCart.home.createLabel">
+            Create new Service Request Cart
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="serviceRequestCarts">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="prestozoomApp.serviceRequestCart.description">Description</span></th>
+            <th><span jhiTranslate="prestozoomApp.serviceRequestCart.date">Date</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let serviceRequestCart of serviceRequestCarts ;trackBy: trackId">
+                <td><a [routerLink]="['/service-request-cart-job-order', serviceRequestCart.id, 'view' ]">{{serviceRequestCart.id}}</a></td>
+                <td>{{serviceRequestCart.description}}</td>
+                <td>{{serviceRequestCart.date | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/service-request-cart-job-order', serviceRequestCart.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/service-request-cart-job-order', serviceRequestCart.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'service-request-cart-job-order/'+ serviceRequestCart.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

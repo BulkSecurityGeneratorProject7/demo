@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="serviceRequest">
+            <h2><span jhiTranslate="prestozoomApp.serviceRequest.detail.title">Service Request</span> {{serviceRequest.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="prestozoomApp.serviceRequest.service">Service</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'prestozoomApp.Service.' + serviceRequest.service}}">{{serviceRequest.service}}</span>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.serviceRequest.amount">Amount</span></dt>
+                <dd>
+                    <span>{{serviceRequest.amount}}</span>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.serviceRequest.startTime">Start Time</span></dt>
+                <dd>
+                    <span>{{serviceRequest.startTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.serviceRequest.endTime">End Time</span></dt>
+                <dd>
+                    <span>{{serviceRequest.endTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.serviceRequest.invoice">Invoice</span></dt>
+                <dd>
+                    <div *ngIf="serviceRequest.invoiceId">
+                        <a [routerLink]="['/invoice-job-order', serviceRequest.invoiceId, 'view']">{{serviceRequest.invoiceId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.serviceRequest.jobOrder">Job Order</span></dt>
+                <dd>
+                    <div *ngIf="serviceRequest.jobOrderId">
+                        <a [routerLink]="['/job-job-order', serviceRequest.jobOrderId, 'view']">{{serviceRequest.jobOrderId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.serviceRequest.clientLocation">Client Location</span></dt>
+                <dd>
+                    <div *ngIf="serviceRequest.clientLocationId">
+                        <a [routerLink]="['/client-location-job-order', serviceRequest.clientLocationId, 'view']">{{serviceRequest.clientLocationId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="prestozoomApp.serviceRequest.cartNo">Cart No</span></dt>
+                <dd>
+                    <div *ngIf="serviceRequest.cartNoId">
+                        <a [routerLink]="['/service-request-cart-job-order', serviceRequest.cartNoId, 'view']">{{serviceRequest.cartNoId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/service-request-job-order', serviceRequest.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

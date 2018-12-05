@@ -1,0 +1,13 @@
+{
+    "prestozoomApp": {
+        "Payment": {
+            "null": "",
+            "VISA": "VISA",
+            "MASTERCARD": "MASTERCARD",
+            "PAYPAL": "PAYPAL",
+            "CHECK": "CHECK",
+            "CASH": "CASH",
+            "GIFTCARD": "GIFTCARD"
+        }
+    }
+}

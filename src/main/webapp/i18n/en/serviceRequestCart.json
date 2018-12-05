@@ -1,0 +1,22 @@
+{
+    "prestozoomApp": {
+        "serviceRequestCart": {
+            "home": {
+                "title": "Service Request Carts",
+                "createLabel": "Create a new Service Request Cart",
+                "createOrEditLabel": "Create or edit a Service Request Cart"
+            },
+            "created": "A new Service Request Cart is created with identifier {{ param }}",
+            "updated": "A Service Request Cart is updated with identifier {{ param }}",
+            "deleted": "A Service Request Cart is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Service Request Cart {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Request Cart"
+            },
+            "description": "Description",
+            "date": "Date"
+        }
+    }
+}

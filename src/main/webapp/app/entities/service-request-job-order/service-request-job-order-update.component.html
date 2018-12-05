@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-service-request-job-order-heading" jhiTranslate="prestozoomApp.serviceRequest.home.createOrEditLabel">Create or edit a Service Request</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!serviceRequest.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="serviceRequest.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.serviceRequest.service" for="field_service">Service</label>
+                    <select class="form-control" name="service" [(ngModel)]="serviceRequest.service" id="field_service" >
+                        <option value="CLEANING">{{'prestozoomApp.Service.CLEANING' | translate}}</option>
+                        <option value="MAINTENANCE">{{'prestozoomApp.Service.MAINTENANCE' | translate}}</option>
+                        <option value="STAFFING">{{'prestozoomApp.Service.STAFFING' | translate}}</option>
+                        <option value="PLUBMING_ELECTRICAL">{{'prestozoomApp.Service.PLUBMING_ELECTRICAL' | translate}}</option>
+                        <option value="IT_SECRUITY">{{'prestozoomApp.Service.IT_SECRUITY' | translate}}</option>
+                        <option value="DECOR">{{'prestozoomApp.Service.DECOR' | translate}}</option>
+                        <option value="MOVING">{{'prestozoomApp.Service.MOVING' | translate}}</option>
+                        <option value="OFFICE_HELP">{{'prestozoomApp.Service.OFFICE_HELP' | translate}}</option>
+                        <option value="EVENT_SUPPORT">{{'prestozoomApp.Service.EVENT_SUPPORT' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.serviceRequest.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                        [(ngModel)]="serviceRequest.amount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.serviceRequest.startTime" for="field_startTime">Start Time</label>
+                    <div class="d-flex">
+                        <input id="field_startTime" type="datetime-local" class="form-control" name="startTime" [(ngModel)]="startTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.serviceRequest.endTime" for="field_endTime">End Time</label>
+                    <div class="d-flex">
+                        <input id="field_endTime" type="datetime-local" class="form-control" name="endTime" [(ngModel)]="endTime"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.serviceRequest.invoice" for="field_invoice">Invoice</label>
+                    <select class="form-control" id="field_invoice" name="invoice" [(ngModel)]="serviceRequest.invoiceId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="invoiceOption.id" *ngFor="let invoiceOption of invoices; trackBy: trackInvoiceById">{{invoiceOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.serviceRequest.jobOrder" for="field_jobOrder">Job Order</label>
+                    <select class="form-control" id="field_jobOrder" name="jobOrder" [(ngModel)]="serviceRequest.jobOrderId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="jobOption.id" *ngFor="let jobOption of jobs; trackBy: trackJobById">{{jobOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.serviceRequest.clientLocation" for="field_clientLocation">Client Location</label>
+                    <select class="form-control" id="field_clientLocation" name="clientLocation" [(ngModel)]="serviceRequest.clientLocationId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="clientLocationOption.id" *ngFor="let clientLocationOption of clientlocations; trackBy: trackClientLocationById">{{clientLocationOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.serviceRequest.cartNo" for="field_cartNo">Cart No</label>
+                    <select class="form-control" id="field_cartNo" name="cartNo" [(ngModel)]="serviceRequest.cartNoId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceRequestCartOption.id" *ngFor="let serviceRequestCartOption of servicerequestcarts; trackBy: trackServiceRequestCartById">{{serviceRequestCartOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

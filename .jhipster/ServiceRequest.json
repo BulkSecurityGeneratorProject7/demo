@@ -1,0 +1,60 @@
+{
+    "name": "ServiceRequest",
+    "fields": [
+        {
+            "fieldName": "service",
+            "fieldType": "Service",
+            "fieldValues": "CLEANING,MAINTENANCE,STAFFING,PLUBMING_ELECTRICAL,IT_SECRUITY,DECOR,MOVING,OFFICE_HELP,EVENT_SUPPORT"
+        },
+        {
+            "fieldName": "amount",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "startTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "endTime",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "invoice",
+            "otherEntityName": "invoice",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "serviceRequest"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "jobOrder",
+            "otherEntityName": "job",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "clientLocation",
+            "otherEntityName": "clientLocation",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "cartNo",
+            "otherEntityName": "serviceRequestCart",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181205052249",
+    "entityTableName": "service_request",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "jobOrder"
+}

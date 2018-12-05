@@ -1,0 +1,25 @@
+{
+    "prestozoomApp": {
+        "clientLocation": {
+            "home": {
+                "title": "Client Locations",
+                "createLabel": "Create a new Client Location",
+                "createOrEditLabel": "Create or edit a Client Location"
+            },
+            "created": "A new Client Location is created with identifier {{ param }}",
+            "updated": "A Client Location is updated with identifier {{ param }}",
+            "deleted": "A Client Location is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Client Location {{ id }}?"
+            },
+            "detail": {
+                "title": "Client Location"
+            },
+            "streetAddress": "Street Address",
+            "postalCode": "Postal Code",
+            "city": "City",
+            "stateProvince": "State Province",
+            "client": "Client"
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "prestozoomApp": {
+        "Service": {
+            "null": "",
+            "CLEANING": "CLEANING",
+            "MAINTENANCE": "MAINTENANCE",
+            "STAFFING": "STAFFING",
+            "PLUBMING_ELECTRICAL": "PLUBMING_ELECTRICAL",
+            "IT_SECRUITY": "IT_SECRUITY",
+            "DECOR": "DECOR",
+            "MOVING": "MOVING",
+            "OFFICE_HELP": "OFFICE_HELP",
+            "EVENT_SUPPORT": "EVENT_SUPPORT"
+        }
+    }
+}

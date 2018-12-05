@@ -1,0 +1,28 @@
+{
+    "prestozoomApp": {
+        "serviceRequest": {
+            "home": {
+                "title": "Service Requests",
+                "createLabel": "Create a new Service Request",
+                "createOrEditLabel": "Create or edit a Service Request"
+            },
+            "created": "A new Service Request is created with identifier {{ param }}",
+            "updated": "A Service Request is updated with identifier {{ param }}",
+            "deleted": "A Service Request is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Service Request {{ id }}?"
+            },
+            "detail": {
+                "title": "Service Request"
+            },
+            "service": "Service",
+            "amount": "Amount",
+            "startTime": "Start Time",
+            "endTime": "End Time",
+            "invoice": "Invoice",
+            "jobOrder": "Job Order",
+            "clientLocation": "Client Location",
+            "cartNo": "Cart No"
+        }
+    }
+}

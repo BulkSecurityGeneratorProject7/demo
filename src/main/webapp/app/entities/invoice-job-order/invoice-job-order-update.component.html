@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-invoice-job-order-heading" jhiTranslate="prestozoomApp.invoice.home.createOrEditLabel">Create or edit a Invoice</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!invoice.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="invoice.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.invoice.amount" for="field_amount">Amount</label>
+                    <input type="number" class="form-control" name="amount" id="field_amount"
+                        [(ngModel)]="invoice.amount" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.invoice.payment" for="field_payment">Payment</label>
+                    <select class="form-control" name="payment" [(ngModel)]="invoice.payment" id="field_payment" >
+                        <option value="VISA">{{'prestozoomApp.Payment.VISA' | translate}}</option>
+                        <option value="MASTERCARD">{{'prestozoomApp.Payment.MASTERCARD' | translate}}</option>
+                        <option value="PAYPAL">{{'prestozoomApp.Payment.PAYPAL' | translate}}</option>
+                        <option value="CHECK">{{'prestozoomApp.Payment.CHECK' | translate}}</option>
+                        <option value="CASH">{{'prestozoomApp.Payment.CASH' | translate}}</option>
+                        <option value="GIFTCARD">{{'prestozoomApp.Payment.GIFTCARD' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="prestozoomApp.invoice.serviceRequest" for="field_serviceRequest">Service Request</label>
+                    <select class="form-control" id="field_serviceRequest" name="serviceRequest" [(ngModel)]="invoice.serviceRequestId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="serviceRequestOption.id" *ngFor="let serviceRequestOption of servicerequests; trackBy: trackServiceRequestById">{{serviceRequestOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

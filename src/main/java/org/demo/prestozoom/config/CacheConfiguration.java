@@ -38,6 +38,22 @@ public class CacheConfiguration {
             cm.createCache(org.demo.prestozoom.domain.User.class.getName(), jcacheConfiguration);
             cm.createCache(org.demo.prestozoom.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(org.demo.prestozoom.domain.User.class.getName() + ".authorities", jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Client.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.ClientLocation.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.ServiceRequestCart.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.ServiceRequest.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Company.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Location.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Department.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Department.class.getName() + ".employees", jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Task.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Task.class.getName() + ".jobs", jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Employee.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Employee.class.getName() + ".jobs", jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Job.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Job.class.getName() + ".tasks", jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.JobHistory.class.getName(), jcacheConfiguration);
+            cm.createCache(org.demo.prestozoom.domain.Invoice.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

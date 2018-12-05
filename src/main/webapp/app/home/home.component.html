@@ -1,10 +1,32 @@
+<div [ngSwitch]="isAuthenticated()">
+
+    <div class="alert alert-success" *ngSwitchCase="true" routerLinkActive="active">
+        <div class="row">
+            <div *jhiHasAnyAuthority="'ROLE_ADMIN'">
+                <h1 class="display-4">Welcome, ADMIN Presto Zoom!</h1>
+                <img src="../../content/images/admin/loginAdmin.png" width="100%">
+            </div>
+            <div *jhiHasAnyAuthority="'ROLE_USER'">
+                <h1 class="display-4">Welcome, USER Presto Zoom!</h1>
+                <img src="../../content/images/partner/ManagedbyQ.png" width="100%">
+            </div>
+            <div *jhiHasAnyAuthority="'ROLE_PARTNER'">
+                <h1 class="display-4">Welcome, PARTNER Presto Zoom!</h1>
+                <img src="../../content/images/partner/partnerlogin.png" width="100%">
+            </div>
+
+
+        </div>
+
+    </div>
+
 <div class="row">
     <div class="col-md-3">
         <span class="hipster img-fluid rounded"></span>
     </div>
     <div class="col-md-9">
-        <h1 class="display-4" jhiTranslate="home.title">Welcome, Java Hipster!</h1>
-        <p class="lead" jhiTranslate="home.subtitle">This is your homepage</p>
+        <h1 class="display-4" jhiTranslate="home.title">Welcome to Presto Zoom!</h1>
+        <p class="lead" jhiTranslate="home.subtitle">For Presentation</p>
 
         <div [ngSwitch]="isAuthenticated()">
             <div class="alert alert-success" *ngSwitchCase="true">
@@ -27,15 +49,15 @@
         </p>
 
         <ul>
-            <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener" jhiTranslate="home.link.homepage">JHipster homepage</a></li>
-            <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener" jhiTranslate="home.link.stackoverflow">JHipster on Stack Overflow</a></li>
-            <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener" jhiTranslate="home.link.bugtracker">JHipster bug tracker</a></li>
-            <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener" jhiTranslate="home.link.chat">JHipster public chat room</a></li>
-            <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener" jhiTranslate="home.link.follow">follow @java_hipster on Twitter</a></li>
+            <li><a href="https://prestozoom.com/" target="_blank" rel="noopener" jhiTranslate="home.link.homepage">Presto Zoom Website</a></li>
+            <li><a href="https://www.linkedin.com/company/prestozoom/" target="_blank" rel="noopener" jhiTranslate="home.link.linkedin">Presto Zoom on LinkedIn</a></li>
+            <li><a href="https://www.facebook.com/prestozoom/" target="_blank" rel="noopener" jhiTranslate="home.link.facebook">Presto Zoom Facebook Page</a></li>
+            <li><a href="https://twitter.com/prestozoom?lang=en" target="_blank" rel="noopener" jhiTranslate="home.link.twitter">follow @prestozoom on Twitter</a></li>
         </ul>
 
         <p>
             <span jhiTranslate="home.like">If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener" jhiTranslate="home.github">GitHub</a>!
         </p>
     </div>
+</div>
 </div>
